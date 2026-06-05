@@ -3,14 +3,136 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Styled Headings</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: white;
+        border-radius: 20px;
+        padding: 40px 60px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        text-align: center;
+      }
+
+      .heading {
+        margin: 15px 0;
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+
+      h1.heading {
+        font-size: 2.5rem;
+        color: #667eea;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      h2.heading {
+        font-size: 2rem;
+        color: #764ba2;
+      }
+
+      h3.heading {
+        font-size: 1.75rem;
+        color: #f093fb;
+      }
+
+      h4.heading {
+        font-size: 1.5rem;
+        color: #4facfe;
+      }
+
+      h5.heading {
+        font-size: 1.25rem;
+        color: #43e97b;
+      }
+
+      h6.heading {
+        font-size: 1rem;
+        color: #fa709a;
+      }
+
+      /* Hover effect for all headings */
+      .heading:hover {
+        transform: translateX(10px);
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Add a subtle animation on page load */
+      @keyframes fadeInSlide {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .heading {
+        animation: fadeInSlide 0.6s ease forwards;
+        opacity: 0;
+      }
+
+      h1.heading { animation-delay: 0.1s; }
+      h2.heading { animation-delay: 0.2s; }
+      h3.heading { animation-delay: 0.3s; }
+      h4.heading { animation-delay: 0.4s; }
+      h5.heading { animation-delay: 0.5s; }
+      h6.heading { animation-delay: 0.6s; }
+
+      /* Decorative badge */
+      .badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+
+      /* Responsive design */
+      @media (max-width: 600px) {
+        .container {
+          padding: 30px 20px;
+          width: 90%;
+        }
+        
+        .heading:hover {
+          transform: translateX(5px);
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1 class="heading">this is Heading 1</h1>
-    <h2 class="heading">this is Heading 1</h2>
-    <h3 class="heading">this is Heading 1</h3>
-    <h4 class="heading">this is Heading 1</h4>
-    <h5 class="heading">this is Heading 1</h5>
-    <h6 class="heading">this is Heading 1</h6>
+    <div class="container">
+      <div class="badge">✨ Styled Headings ✨</div>
+      <h1 class="heading">This is Heading 1</h1>
+      <h2 class="heading">This is Heading 2</h2>
+      <h3 class="heading">This is Heading 3</h3>
+      <h4 class="heading">This is Heading 4</h4>
+      <h5 class="heading">This is Heading 5</h5>
+      <h6 class="heading">This is Heading 6</h6>
+    </div>
   </body>
 </html>
